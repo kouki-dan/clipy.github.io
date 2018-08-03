@@ -1,8 +1,6 @@
 <template>
   <div class="pc-header">
-    <h1 class="logo">
-      Clipy
-    </h1>
+    <clipy-logo/>
     <nav>
       <ul class="header-buttons">
         <li><a href="#">コピー履歴</a></li>
@@ -21,10 +19,12 @@
 
 <script>
 import SocialButtons from '~/components/social/SocialButtons.vue'
+import ClipyLogo from '~/components/ClipyLogo.vue'
 
 export default {
   components: {
-    SocialButtons
+    SocialButtons,
+    ClipyLogo
   }
 }
 </script>
@@ -35,10 +35,8 @@ export default {
 .pc-header {
   display: flex;
   margin-top: 30px;
-}
-
-.logo {
-  margin: 0 39px;
+  margin-left: 40px;
+  margin-right: 40px;
 }
 
 .header-buttons {
@@ -48,16 +46,27 @@ export default {
   padding: 0;
 }
 
+.header-buttons a {
+  text-decoration: none;
+  color: #2d2d2d;
+}
+
+.header-buttons a:hover {
+  opacity: 0.7;
+}
+
 .header-buttons li {
   margin: 0 16px;
 }
 
 .sns-buttons {
   margin: 8px 0;
+  flex-shrink: 2;
 }
 
 .download-button {
   margin-top: -10px;
+  margin-left: 8px;
   width: 176px;
   height: 52px;
   line-height: 48px;
@@ -69,5 +78,4 @@ export default {
   text-align: center;
 }
 </style>
-
 

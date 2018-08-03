@@ -1,80 +1,117 @@
 <template>
-  <div class="VueToNuxtLogo">
-    <div class="Triangle Triangle--two"/>
-    <div class="Triangle Triangle--one"/>
-    <div class="Triangle Triangle--three"/>
-    <div class="Triangle Triangle--four"/>
+  <div class="sp-header">
+    <div class="header-item">
+      <clipy-logo/>
+      <label for="header-menu-on" class="menu">=メニュー</label>
+    </div>
+    <input type="checkbox" id="header-menu-on"/>
+    <ul class="header-menu">
+      <li><a href="#">コピー履歴</a></li>
+      <li><a href="#">スニペット</a></li>
+      <li><a href="#">自由に呼び出し</a></li>
+      <li><a href="#">オープンソース</a></li>
+      <li class="social-container"><social-buttons class="social-buttons"/></li>
+    </ul>
   </div>
 </template>
 
 <style>
-.VueToNuxtLogo {
-  display: inline-block;
-  animation: turn 2s linear forwards 1s;
-  transform: rotateX(180deg);
-  position: relative;
-  overflow: hidden;
-  height: 180px;
-  width: 245px;
+.sp-header {
+  padding: 15px 20px;
+  box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.1);
 }
 
-.Triangle {
+.header-item {
+  display: flex;
+  justify-content: space-between;
+}
+
+.menu {
+  width: 93px;
+  height: 30px;
+  border-radius: 3px;
+  border: solid 1px #3d90c9;
+  user-select: none;
+}
+
+.header-menu {
+  background-color: #fff;
   position: absolute;
-  top: 0;
+  top: 68px;
   left: 0;
-  width: 0;
   height: 0;
+  padding: 0 20px;
+  overflow: hidden;
+  width: 100%;
+  box-shadow: 0 2px 1px 0 rgba(0, 0, 0, 0.1);
 }
 
-.Triangle--one {
-  border-left: 105px solid transparent;
-  border-right: 105px solid transparent;
-  border-bottom: 180px solid #41B883;
+.header-menu li {
+  list-style-type: none;
+  border-bottom: solid 1px #eceaea;
+  padding: 10px;
 }
 
-.Triangle--two {
-  top: 30px;
-  left: 35px;
-  animation: goright 0.5s linear forwards 3.5s;
-  border-left: 87.5px solid transparent;
-  border-right: 87.5px solid transparent;
-  border-bottom: 150px solid #3B8070;
+.header-menu li:last-child {
+  border-bottom: none;
 }
 
-.Triangle--three {
-  top: 60px;
-  left: 35px;
-  animation: goright 0.5s linear forwards 3.5s;
-  border-left: 70px solid transparent;
-  border-right: 70px solid transparent;
-  border-bottom: 120px solid #35495E;
+.social-container {
+  margin: 25px;
+  padding: 0 20px;
+}
+.social-buttons {
+  text-align: center;
+  margin: 0 auto;
+  display: block;
 }
 
-.Triangle--four {
-  top: 120px;
-  left: 70px;
-  animation: godown 0.5s linear forwards 3s;
-  border-left: 35px solid transparent;
-  border-right: 35px solid transparent;
-  border-bottom: 60px solid #fff;
+.social-buttons .facebook {
+  top: -3px;
 }
 
-@keyframes turn {
-  100% {
-    transform: rotateX(0deg);
-  }
+.header-menu li a {
+  display: block;
+  border-radius: 4px;
+  width: 100%;
+  height: 50px;
+  line-height: 50px;
+  text-align: center;
+  color: #222;
+  text-decoration: none;
+  -webkit-tap-highlight-color: rgba(61, 144, 201, 0.7);
 }
 
-@keyframes godown {
-  100% {
-    top: 180px;
-  }
+.header-menu li a:hover {
+  color: #eee;
+  background-color: #3d90c9;
 }
 
-@keyframes goright {
-  100% {
-    left: 70px;
-  }
+
+
+input[type="checkbox"]#header-menu-on {
+  display: none;
+}
+
+input[type="checkbox"]#header-menu-on + .header-menu {
+  display: none;
+}
+
+input[type="checkbox"]#header-menu-on:checked + .header-menu {
+  display: block;
+  height: auto;
 }
 </style>
+
+<script>
+import ClipyLogo from '~/components/ClipyLogo.vue'
+import SocialButtons from '~/components/social/SocialButtons.vue'
+
+export default {
+  components: {
+    ClipyLogo,
+    SocialButtons
+  }
+}
+</script>
 
