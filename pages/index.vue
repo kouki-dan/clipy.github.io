@@ -64,7 +64,7 @@ export default {
 @import url( 'https://fonts.googleapis.com/css?family=Montserrat' );
 
 *{
-  font-family: 'ヒラギノ角ゴ Pro W3' , 'Hiragino Kaku Gothic ProN' , 'Montserrat' , sans-serif;
+  font-family: -apple-system, 'BlinkMacSystemFont', 'Hiragino Kaku Gothic ProN', 'meiryo', sans-serif;;
 }
 
 .container {

@@ -3,14 +3,24 @@ module.exports = {
   ** Headers of the page
   */
   head: {
-    title: 'clipy.github.io',
+    title: 'Clipy',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: 'Clipy site.' }
+      { hid: 'description', name: 'description', content: 'Clipboard extension app for macOS' },
+      { hid: 'og:type', name: 'og:type', content: 'website' },
+      { hid: "og:url", name: "og:url", content: "https://clipy-app.com"},
+      { hid: "og:title", name:"og:title", content: "Clipy"},
+      { hid: "og:description", name: "og:description", content: "Clipboard extension app for macOS"},
+      { hid: "og:image", name: "og:image", content: "http://clipy-app.com/img/clipy.png"},
+      { hid: "og:locale", name: "og:locale", content: "ja_JP"},
+      { hid: "fb:app_id", name: "fb:app_id", content: "752550624866720"},
+      { hid: "twitter:card", name: "twitter:card", content: "summary"},
+      { hid: "twitter:creator", name: "twitter:creator", content: "@clipyApp"},
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+      { rel: 'shortcut icon', type: 'image/png', href: '/favicon.png', sizes: '16x16' },
+      { rel: 'shortcut icon', type: 'image/png', href: '/favicon@2x.png', sizes: '32x32' },
     ]
   },
   /*
