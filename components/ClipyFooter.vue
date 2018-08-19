@@ -8,7 +8,6 @@
       {{ $t('support-os') }}
     </div>
     <div class="language-selector">
-
       <span
         v-for="locale in $i18n.locales"
         v-if="locale.code == $i18n.locale"
@@ -51,11 +50,23 @@ footer {
   background-color: #f3f6f7;
 }
 
+@media screen and (max-width: 768px) {
+  footer {
+    padding-top: 16px;
+  }
+}
+
 .footer-download {
   background-color: #3d90c9;
   padding: 50px;
   text-align: center;
   color: white;
+}
+
+@media screen and (max-width: 768px) {
+  .footer-download {
+    display: none;
+  }
 }
 
 .footer-download-button {

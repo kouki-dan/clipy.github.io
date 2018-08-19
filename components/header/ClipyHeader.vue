@@ -25,6 +25,7 @@ export default {
 
 .header {
   position: relative;
+  z-index: 10;
 }
 
 .pc-header-container {
