@@ -80,7 +80,8 @@ module.exports = {
           ja: require('./locales/ja.json')
         }
       }
-    }]
+    }],
+    ['@nuxtjs/google-tag-manager', {id: 'GTM-TZF5GZ4'}],
   ]
 }
 
